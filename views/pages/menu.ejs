@@ -1,0 +1,46 @@
+<!-- HEAD PARTIAL GOES HERE -->
+<%- include("../partials/head") -%>
+<!-- NAVIGATION PARTIAL GOES HERE -->
+<%- include("../partials/nav") -%>
+<!-- HEADER-IMAGE PARTIAL GOES HERE -->
+<%- include("../partials/headerImage") -%>
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
+  
+
+    <div id="Eat" class="w3-center w3-container w3-padding-48 w3-card">
+      <h5 class=""><span class="w3-tag w3-wide">Food</span></h5>
+<!-- loop it up instead -->
+
+    <% for (food of foodData) { %>    
+      <h5><a href="/menu/<%= food._id %>"><%= food.item %></a></h5>
+    <% } %>
+
+      <br>
+      <br>
+
+      <h5 class=""><span class="w3-tag w3-wide">Drinks</span></h5>
+      
+      <% for( drink of drinksData ) { %> <!-- execution -->
+        <h5><a href="/menu/<%= drink._id %>"><%= drink.item %></a></h5>
+      <% } %> 
+      
+    </div>  
+    <img src="/images/pexels-pavel-danilyuk-6612736.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer Partial Goes Here-->
+<%- include("../partials/footer") -%>
+
